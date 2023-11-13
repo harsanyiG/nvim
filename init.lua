@@ -2,6 +2,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+
 -- options
 require('gdog.options')
 
@@ -268,3 +269,9 @@ cmp.setup({
 -- TODO: solve this, call it after extension loaded
 -- keymaps
 require('gdog.keymaps')
+
+--TRANSPARENTIOTUM!!!!!
+
+vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
+
