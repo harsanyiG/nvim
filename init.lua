@@ -251,27 +251,21 @@ mason_lspconfig.setup_handlers {
 local cmp = require 'cmp'
 
 cmp.setup({
-  mapping = cmp.mapping.preset.insert {
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete {},
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    }
-  },
-  sources = {
-    { name = 'nvim_lsp' }
-  },
+	mapping = cmp.mapping.preset.insert {
+		['<C-n>'] = cmp.mapping.select_next_item(),
+		['<C-p>'] = cmp.mapping.select_prev_item(),
+		['<C-d>'] = cmp.mapping.scroll_docs(-4),
+		['<C-f>'] = cmp.mapping.scroll_docs(4),
+		['<C-Space>'] = cmp.mapping.complete {},
+		['<CR>'] = cmp.mapping.confirm {
+			behavior = cmp.ConfirmBehavior.Replace,
+			select = true,
+		}
+	},
+	sources = {
+		{ name = 'nvim_lsp' }
+	},
 })
 -- TODO: solve this, call it after extension loaded
 -- keymaps
 require('gdog.keymaps')
-
---TRANSPARENTIOTUM!!!!!
-
-vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
-vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
-
