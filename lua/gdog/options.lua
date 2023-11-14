@@ -1,3 +1,5 @@
+vim.cmd [[colorscheme tokyonight]]
+
 -- line numbers
 vim.wo.number = true
 
