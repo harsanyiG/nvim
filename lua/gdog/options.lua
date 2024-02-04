@@ -1,5 +1,5 @@
-vim.cmd [[colorscheme tokyonight]]
-
+-- line wrap
+vim.wo.wrap = false
 -- line numbers
 vim.wo.number = true
 
@@ -29,7 +29,7 @@ vim.o.timeoutlen = 300
 -- Better completition
 vim.o.completeopt = 'menuone,noselect'
 
-vim.o.termguicolors = true
+vim.o.termguicolors = false
 
 
 -- NETRW stuff

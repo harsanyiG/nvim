@@ -32,13 +32,6 @@ require("lazy").setup({
 	},
 
 	-- Colorscheme and plugins
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	},
-
 	-- Lua line
 	{
 		-- Set lualine as statusline
@@ -47,7 +40,6 @@ require("lazy").setup({
 		opts = {
 			options = {
 				icons_enabled = true,
-				theme = 'tokyonight',
 				component_separators = '|',
 				section_separators = '',
 			},
@@ -91,8 +83,25 @@ require("lazy").setup({
 
 })
 
+require('lualine').setup({
+    options = {
+        section_separators = '', component_separators = '|',
+	icons_enabled = true,
+    },
+    sections = {
+        -- left
+        lualine_a = { 'mode' },
+        lualine_b = { 'branch', 'diff', 'diagnostics' },
+        lualine_c = { 'filename' },
 
-require('lualine').setup()
+        -- right
+        lualine_x = { 'encoding', 'filetype' },
+        lualine_y = { 'progress' },
+        lualine_z = { 'searchcount' }
+    },
+    extensions = { 'fugitive'},
+})
+
 require('gitsigns').setup()
 require('Comment').setup()
 require('telescope').setup { defaults = {
